@@ -17,7 +17,7 @@ logger = logging.getLogger(__name__)
 @run_async
 def start(update,context):
 	name=update.message.chat.first_name
-	update.message.reply_text("Hi! "+name+"\nWelcome to Torrent Search Bot 😃,\nYou can search torrents using this bot just send me a search query to get started")
+	update.message.reply_photo(caption="Hi!" +name+"\nWelcome to Torrent Search Bot 😃,\nYou can search torrents using this bot just send me a search query to get started",photo="https://th.bing.com/th/id/OIG4.iV2l1_HaysKkHZXO8DlJ?pid=ImgGn")
 
 @run_async    
 def search (update,context):
@@ -95,7 +95,7 @@ def getlink(update,context):
 def history (update,context):
 	history=context.user_data['history']
 	if len(history)==0:
-		update.message.reply_text("Your search history is empty")
+		update.message.reply_photo(photo="https://th.bing.com/th/id/OIG4.iV2l1_HaysKkHZXO8DlJ?pid=ImgGn",caption="Your search history is empty")
 	else:
 		history="\n".join(history)
 		update.message.reply_text("You have searched for the following torrents:\n"+history+"\n\nclick  /clear to clear history")
