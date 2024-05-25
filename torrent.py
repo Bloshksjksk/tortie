@@ -54,7 +54,7 @@ def search (update,context):
 		a=i+1
 		
 		link="/get_magnet_link"+str(a)
-		result.insert(i,(str(i+1)+") "+name+"\nsize: "+size+"\nMagnet Link: "+link+"\nSeeders: "+str(seeder)+"\nLeechers: "+str(leechers)+"\nUpload Date: "+str(upload_date)+"\n\n"))
+		result.insert(i,(str(i+1)+") "+name+"\nsize📦: "+size+"\nMagnet Link🧲: "+link+"\nSeeders🌱: "+str(seeder)+"\nLeechers🪱: "+str(leechers)+"\nUpload Date📅: "+str(upload_date)+"\n\n"))
 		i+=1
 	
 	if len(result)%4==0:
