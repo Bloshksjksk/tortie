@@ -17,7 +17,7 @@ logger = logging.getLogger(__name__)
 @run_async
 def start(update,context):
 	name=update.message.chat.first_name
-	update.message.reply_photo(caption="Hi!" +name+"\nWelcome to Torrent Search Bot 😃,\nYou can search torrents using this bot just send me a search query to get started",photo="https://th.bing.com/th/id/OIG4.iV2l1_HaysKkHZXO8DlJ?pid=ImgGn")
+	update.message.reply_photo(caption="Hi!" +name+"\n\n Welcome to Torrent Search Bot 😃,\n\nYou can search torrents using this bot just send me a search query to get started\n\n<b>Bot Created By @movie_time_botonly</b>",photo="https://th.bing.com/th/id/OIG4.iV2l1_HaysKkHZXO8DlJ?pid=ImgGn")
 
 @run_async    
 def search (update,context):
@@ -90,15 +90,15 @@ def getlink(update,context):
 	torrent_name=context.user_data['torrent_name']
 	link=magnet_link[number-1]
 	torrent=torrent_name[number-1]
-	update.message.reply_text(torrent+f"\nmagnet Link : <pre>{link}</pre>",parse_mode=telegram.ParseMode.HTML)
+	update.message.reply_text(torrent+f"\n\nmagnet Link : <pre>{link}</pre>\n\n <b>Bot Created By @movie_time_botonly</b>",parse_mode=telegram.ParseMode.HTML)
 	
 def history (update,context):
 	history=context.user_data['history']
 	if len(history)==0:
-		update.message.reply_photo(photo="https://th.bing.com/th/id/OIG4.iV2l1_HaysKkHZXO8DlJ?pid=ImgGn",caption="Your search history is empty")
+		update.message.reply_photo(photo="https://th.bing.com/th/id/OIG4.iV2l1_HaysKkHZXO8DlJ?pid=ImgGn",caption="**Your search history is empty**")
 	else:
 		history="\n".join(history)
-		update.message.reply_text("You have searched for the following torrents:\n"+history+"\n\nclick  /clear to clear history")
+		update.message.reply_photo(photo="https://th.bing.com/th/id/OIG4.iV2l1_HaysKkHZXO8DlJ?pid=ImgGn",caption="You have searched for the following torrents:\n"+"📍"+history+"\n\nclick  /clear to clear history")
 	
 	
 	
@@ -108,10 +108,10 @@ def clear(update,context):
 	try:
 		history=context.user_data['history']
 		history.clear()
-		update.message.reply_text("Searched history cleared")
+		update.message.reply_text("Searched history cleared 🚮")
 
 	except:
-		update.message.reply_text("Your search history is empty")
+		update.message.reply_text("Your search history is empty 🗑️")
 	try:
 		magnet_link=context.user_data['magnet_link']
 		magnet_link.clear()
